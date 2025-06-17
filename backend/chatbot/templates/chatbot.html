@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>BookNest Chatbot</h1>
+    <form id="chat-form">
+        <input type="text" id="user-message" placeholder="Type your message" required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="bot-response"></div>
+
+    <script>
+        document.getElementById('chat-form').onsubmit = async function(e) {
+            e.preventDefault();
+            const message = document.getElementById('user-message').value;
+            const response = await fetch('/chatbot/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `message=${message}`
+            });
+            const data = await response.json();
+            document.getElementById('bot-response').innerText = data.response;
+        }
+    </script>
+</body>
+</html>
