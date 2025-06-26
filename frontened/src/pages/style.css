@@ -234,17 +234,80 @@ body {
 .footer-section ul li a:hover {
   color:#1fa2c5;
 }
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  color: #1fa2c5;
-  font-size: 14px;
+.footer-section {
+  text-align: right;
+}
+.footer-section {
+  text-align: right;
 }
 
-.social-icons a:hover {
-  color: black;
+.footer-section .social-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 50px;
+  gap: 30px;
 }
+
+.footer-section .social-icons a {
+  position: relative;
+  font-size: 1.5rem;
+  color: #555; 
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-section .social-icons a::before {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 130%; 
+  left: 50%; 
+  transform: translate(-50%, 10px);
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #333;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.footer-section .social-icons a:hover::before {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.footer-section .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-section .social-icons a:hover .fa-facebook {
+  color: #1877F2;
+}
+.footer-section .social-icons a:hover .fa-twitter {
+  color: #1DA1F2;
+}
+.footer-section .social-icons a:hover .fa-instagram {
+  color: #E1306C;
+}
+.footer-section .social-icons a:hover .fa-linkedin {
+  color: #0077B5;
+}
+.footer-section .social-icons a:hover[data-name="Facebook"]::before {
+  background-color: #1877F2;
+}
+.footer-section .social-icons a:hover[data-name="Twitter"]::before {
+  background-color: #1DA1F2;
+}
+.footer-section .social-icons a:hover[data-name="Instagram"]::before {
+  background-color: #E1306C;
+}
+.footer-section .social-icons a:hover[data-name="LinkedIn"]::before {
+  background-color: #0077B5;
+}
+
 
 .footer-bottom {
   text-align: center;
@@ -278,8 +341,8 @@ body {
   padding: 30px;
 }
 .book-image {
-  width: 150px;  /* Adjust this value as needed */
-  height: 150px; /* Adjust this value as needed */
+  width: 150px;  
+  height: 150px; 
   object-fit: cover; 
 }
 

@@ -28,15 +28,24 @@ const Footer = () => {
           <p>Address: 123 Book St</p>
         </div>
 
-        <div className="footer-section">
-          <h3>Follow Us</h3>
-          <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
-        </div>
+       <div className="footer-section">
+  <h3>Follow Us</h3>
+  <div className="social-icons">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" data-name="Facebook">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-name="Twitter">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" data-name="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-name="LinkedIn">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+  </div>
+</div>
+
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} BookNest. All rights reserved.</p>
